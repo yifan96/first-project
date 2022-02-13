@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- Testing the automatic population of objects -->
+    <!--model name='room'>
+      <include>
+        <uri>model://room_obs</uri>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model-->
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+      <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+   <plugin name="ros_interface_plugin" filename="librotors_gazebo_ros_interface_plugin.so"/>
+     <model name='wall'>
+      <include>
+        <uri>model://Wall_square</uri>
+        <pose>0 0 0 0 0 0</pose>
+      </include>
+    </model>
+    
+    <model name='pillar_m_1'>
+      <include>
+        <uri>model://pillar_m</uri>
+        <pose> 0 0 1.75 0 0 0 </pose>
+      </include>
+    </model>
+    
+    <model name='pillar_l'>
+      <include>
+        <uri>model://pillar_l</uri>
+        <pose> -3.7 3.3 1.75 0 0 0 </pose>
+      </include>
+    </model>
+    
+    <model name='pillar_m_2'>
+      <include>
+        <uri>model://pillar_m</uri>
+        <pose>3.8 -5.3 1.75 0 0 0</pose>
+      </include>
+    </model>
+    
+       <model name='pillar_s'>
+      <include>
+        <uri>model://pillar_s</uri>
+        <pose>2.2 -2.4 1.75 0 0 0</pose>
+      </include>
+    </model>
+    
+    
+    <model name='Box_l_1'>
+      <include>
+        <uri>model://Box_l</uri>
+        <pose>5.3 3.8 1.75 0 0 0</pose>
+      </include>
+    </model>
+    
+    
+     <model name='Box_s_1'>
+      <include>
+        <uri>model://Box_s</uri>
+        <pose>-4.7 -4.0 1 0 0 0</pose>
+      </include>
+    </model>
+   
+  </world>
+</sdf>
