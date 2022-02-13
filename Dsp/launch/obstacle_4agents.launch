@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+<include file="$(find dsp)/launch/dsp_3d_start.launch"/>
+<!--
+<node pkg="pcl_ros" name="pcl" type="pcd_to_pointcloud" args="/home/yifan/Downloads/pcd_and_bt_file_simulation/obstacle_room.pcd 0.1">
+<param name="frame_id" type="string" value="world"/>
+</node>
+-->
+<node pkg="tf" type="static_transform_publisher" name="link_broadcaster" args="0 0 0 0 0 0 map world 100" />
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find dsp)/launch/rviz/obstacle.rviz" required="true" />
+<node pkg="rostopic" type="rostopic" name="pubstart1" args="pub /dsp/set_start geometry_msgs/Point -- 1 3.5 1.0"/>
+<node pkg="rostopic" type="rostopic" name="pubgoal1" args="pub /dsp/set_goal geometry_msgs/Point -- 8 8 0.8"/>
+</launch>
